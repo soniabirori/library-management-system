@@ -5,7 +5,7 @@ A simple library management system for managing books, categories, members and l
 ## Structure
 
 - `backend/` – REST API built with Spring Boot 3.4 (Java 21), Spring Data JPA and PostgreSQL
-- `frontend/` – coming soon
+- `frontend/` – React user interface (Vite, plain CSS, sample data)
 - `postman-collection/` – Postman collection for testing the API
 
 ## Backend
@@ -36,6 +36,46 @@ The API runs at `http://localhost:8081`.
 | Loans      | `/api/loans`      | `PUT /{id}/return` to return a book    |
 
 Each resource supports the standard `GET` (all / by id), `POST`, `PUT` and `DELETE` operations.
+
+## Frontend
+
+The frontend is built with **React only** and styled with **plain CSS** (no UI libraries, no router, no icon packs).
+As required by the brief it is **not connected to the backend**: every page starts from sample data in
+`src/data/sampleData.js`, and adding, editing, deleting, borrowing and returning only change in-memory state.
+
+### Run
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+### Pages
+
+| Page       | What it shows |
+|------------|---------------|
+| Dashboard  | Summary cards (books, members, categories, books out), recent loans, loans due next, books per category |
+| Categories | Table of categories with book counts, add/edit form, edit and delete buttons, search |
+| Books      | Table of books (title, author, category, status), add/edit form with a category dropdown, search box, category and status filters |
+| Members    | Table of members (name, email, role, books out), add/edit form with a STUDENT/STAFF dropdown, role filter, a member's loan history |
+| Loans      | Borrow form (member and book dropdowns, dates filled automatically) and a table of loans with borrow, due and return dates and a Return button |
+
+### Structure
+
+```
+frontend/src
+├── App.jsx              # app state + hash-based navigation
+├── components/          # reusable pieces: Navbar, DataTable, Modal/FormModal, form fields, Button, Badge, Toast…
+├── pages/               # Dashboard, Categories, Books, Members, Loans
+├── data/                # sample data and lookup helpers
+└── styles/              # base tokens, layout, components, pages
+```
+
+The layout is responsive: a full sidebar on desktop, an icon sidebar on tablets, and a bottom tab bar on phones,
+where tables turn into cards and forms open as bottom sheets.
 
 ## Postman collection
 

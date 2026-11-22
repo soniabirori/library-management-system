@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Design tokens — one set of colours and sizes used on every page
+   ========================================================================== */
+:root {
+  /* brand (purple) */
+  --violet-25: #fbfaff;
+  --violet-50: #f5f1ff;
+  --violet-100: #ece5fe;
+  --violet-200: #dcd0fd;
+  --violet-300: #c2affb;
+  --violet-400: #a385f7;
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --primary-ink: #5b21b6;
+  --primary-glow: rgba(124, 58, 237, 0.14);
+
+  /* neutrals */
+  --bg: #f6f5fb;
+  --surface: #ffffff;
+  --surface-2: #f9f8fc;
+  --surface-3: #f2f1f7;
+  --border: #ebe9f3;
+  --border-strong: #dedbe9;
+  --text: #1a1530;
+  --text-2: #48445c;
+  --muted: #8a86a0;
+
+  /* status */
+  --success: #067647;
+  --success-dot: #17b26a;
+  --success-bg: #ebfaf2;
+  --warning: #b54708;
+  --warning-dot: #f79009;
+  --warning-bg: #fff6e6;
+  --danger: #d92d20;
+  --danger-bg: #fef1f0;
+  --info: #1d5fd1;
+  --info-bg: #ebf2ff;
+
+  /* shape */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 2px rgba(26, 21, 48, 0.05);
+  --shadow: 0 1px 2px rgba(26, 21, 48, 0.04), 0 8px 28px -12px rgba(26, 21, 48, 0.1);
+  --shadow-lg: 0 30px 70px -20px rgba(46, 16, 101, 0.35);
+  --shadow-primary: 0 8px 18px -8px rgba(124, 58, 237, 0.65);
+
+  /* layout */
+  --sidebar-w: 260px;
+  --topbar-h: 70px;
+
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--topbar-h) + 16px);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text);
+  background:
+    radial-gradient(900px 500px at 100% -5%, rgba(124, 58, 237, 0.08), transparent 65%),
+    radial-gradient(700px 400px at 20% 0%, rgba(168, 85, 247, 0.05), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--violet-300);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--violet-200);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
