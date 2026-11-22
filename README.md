@@ -6,7 +6,7 @@ A simple library management system for managing books, categories, members and l
 
 - `backend/` – REST API built with Spring Boot 3.4 (Java 21), Spring Data JPA and PostgreSQL
 - `frontend/` – coming soon
-- `postman-collection/` – Postman collection for testing the API (coming soon)
+- `postman-collection/` – Postman collection for testing the API
 
 ## Backend
 
@@ -36,3 +36,10 @@ The API runs at `http://localhost:8081`.
 | Loans      | `/api/loans`      | `PUT /{id}/return` to return a book    |
 
 Each resource supports the standard `GET` (all / by id), `POST`, `PUT` and `DELETE` operations.
+
+## Postman collection
+
+`postman-collection/library_system.postman_collection` contains requests for Books, Categories, Members and Loans.
+To use it, open Postman, click **Import** and select the file. Make sure the backend is running on port 8081.
+
+Screenshots of the requests and their responses, including error cases such as missing fields, duplicates and invalid IDs, are in `postman-collection/api-requests-images/`.

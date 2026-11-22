@@ -1,0 +1,563 @@
+{
+  "info": {
+    "_postman_id": "4d6b97fb-0828-4fe5-96e3-c24e9067bf74",
+    "name": "Library System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60358987",
+    "_collection_link": "https://go.postman.co/collection/60358987-4d6b97fb-0828-4fe5-96e3-c24e9067bf74?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Save book",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Rich Dad Poor Dad\",\r\n    \"author\": \"Rober Kiyosaki\",\r\n    \"category\": {\r\n        \"id\": \"e5b1a139-24cd-4235-ae7f-c5ba0e7910cb\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Databases\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/books?search=effective",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "effective"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Book details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"No Category\",\"author\":\"X\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/books/00000000-0000-0000-0000-00000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "books",
+                "00000000-0000-0000-0000-00000000000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Updating a book",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isbn\": \"697097ac-81d0-4278-9413-5bd35c4a02da\",\r\n    \"title\": \"Effective Java\",\r\n    \"author\": \"Joshua Benson\",\r\n    \"category\": {\r\n        \"id\": \"1256e773-592a-45be-b3ab-8e06891443a5\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/books/697097ac-81d0-4278-9413-5bd35c4a02da",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "books",
+                "697097ac-81d0-4278-9413-5bd35c4a02da"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete book",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/books/697097ac-81d0-4278-9413-5bd35c4a02da",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "books",
+                "697097ac-81d0-4278-9413-5bd35c4a02da"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Category",
+      "item": [
+        {
+          "name": "Create category",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Finance\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetching one category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/categories/b1532e3d-7651-48e3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "categories",
+                "b1532e3d-7651-48e3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Updating a category",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Introduction to Programming\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/categories/b1532e3d-7651-48e3-964f-3ddfcc88ca9d",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "categories",
+                "b1532e3d-7651-48e3-964f-3ddfcc88ca9d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch category details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/categories/b1532e3d-7651-48e3-964f-3ddfcc88ca9d/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "categories",
+                "b1532e3d-7651-48e3-964f-3ddfcc88ca9d",
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a category",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/categories/113d5421-cc41-42c8-9ff7-83d42865f22f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "categories",
+                "113d5421-cc41-42c8-9ff7-83d42865f22f"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Member",
+      "item": [
+        {
+          "name": "Add member",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"Bob Milano\",\r\n    \"email\": \"bob@auca.ac.rw\",\r\n    \"role\": \"STUDENT\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/members",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch all members",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/members",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch member",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Databases\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/members/93fc6536-b665-4e4b-bb8b-6a81eceaf195",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "members",
+                "93fc6536-b665-4e4b-bb8b-6a81eceaf195"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update member",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"Alice U.\",\r\n    \"email\": \"alice@auca.ac.rw\",\r\n    \"role\": \"STAFF\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/members/93fc6536-b665-4e4b-bb8b-6a81eceaf195",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "members",
+                "93fc6536-b665-4e4b-bb8b-6a81eceaf195"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch member loans",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/members/93fc6536-b665-4e4b-bb8b-6a81eceaf195/loans",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "members",
+                "93fc6536-b665-4e4b-bb8b-6a81eceaf195",
+                "loans"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Loan",
+      "item": [
+        {
+          "name": "Add book borrow",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/loans?memberId=93fc6536-b665-4e4b-bb8b-6a81eceaf195&bookId=080b6cee-b7d6-411a-9045-36b0600f0678",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "loans"
+              ],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "93fc6536-b665-4e4b-bb8b-6a81eceaf195"
+                },
+                {
+                  "key": "bookId",
+                  "value": "080b6cee-b7d6-411a-9045-36b0600f0678"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All borrowed books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/loans",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "loans"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Return book",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/loans/c7841a59-471e-4456-9334-639cbfd8a3a8/return",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "loans",
+                "c7841a59-471e-4456-9334-639cbfd8a3a8",
+                "return"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a loan",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/loans/697097ac-81d0-4278-9413-5bd35c4a02da",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "loans",
+                "697097ac-81d0-4278-9413-5bd35c4a02da"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
